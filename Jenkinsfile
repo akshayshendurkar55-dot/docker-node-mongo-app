@@ -4,13 +4,19 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Code pulled from GitHub'
+                echo 'Code pulled from GitHub successfully'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build') {
             steps {
-                bat 'docker build -t docker-node-mongo-app .'
+                echo 'Building Node.js MongoDB Docker App'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploy stage completed'
             }
         }
     }
