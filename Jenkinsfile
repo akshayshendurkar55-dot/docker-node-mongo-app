@@ -9,10 +9,11 @@ pipeline {
         }
 
         stage('Build') {
-            steps {
-                echo 'Building Node.js MongoDB Docker App'
-            }
-        }
+    steps {
+        sh 'docker --version'
+        sh 'docker build -t node-mongo-app .'
+    }
+}
 
         stage('Deploy') {
             steps {
