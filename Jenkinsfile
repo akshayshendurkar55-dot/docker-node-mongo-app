@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                echo 'Building Docker Node Mongo App'
+                echo 'Code pulled from GitHub'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t docker-node-mongo-app .'
             }
         }
     }
