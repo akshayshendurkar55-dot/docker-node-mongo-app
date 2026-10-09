@@ -1,62 +1,103 @@
-\# Dockerized Node.js + MongoDB App 🚀
+# Dockerized Node.js + MongoDB Application
 
+A containerized message application built with Node.js, Express, MongoDB, Docker Compose, and Nginx. This repository also includes a Jenkins pipeline to practice CI/CD automation.
 
+## Tech Stack
 
-This is a multi-container Node.js application using MongoDB, Docker, and Docker Compose.
+* **Backend:** Node.js, Express.js
+* **Database:** MongoDB
+* **Containerization:** Docker, Docker Compose
+* **Web Server / Proxy:** Nginx
+* **CI/CD:** Jenkins
+* **Version Control:** Git and GitHub
 
+## Features
 
+* Node.js and Express backend
+* MongoDB integration for storing messages
+* Multi-container setup with Docker Compose
+* Environment-based application configuration
+* Nginx configuration
+* Jenkins pipeline for practicing automated build and deployment workflows
 
-\## Technologies Used
+## Project Structure
 
-\- Node.js
+```text
+docker-node-mongo-app/
+├── Dockerfile
+├── docker-compose.yml
+├── Jenkinsfile
+├── nginx.conf
+├── server.js
+├── package.json
+├── .env.example
+├── .gitignore
+└── README.md
+```
 
-\- Express.js
+## Prerequisites
 
-\- MongoDB
+Install the following tools before running the project:
 
-\- Docker
+* Docker Desktop
+* Git
 
-\- Docker Compose
+## Run Locally
 
-
-
-\## Features
-
-\- Node.js + Express backend
-
-\- MongoDB database integration
-
-\- Dockerized application
-
-\- Multi-container setup using Docker Compose
-
-\- Message form with database storage
-
-
-
-\## Run Project
-
-
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/akshayshendurkar55-dot/docker-node-mongo-app.git
+cd docker-node-mongo-app
+```
 
+### 2. Create your local environment file
+
+On Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Keep `.env` local and do not commit it to GitHub.
+
+### 3. Start the containers
+
+```bash
 docker compose up --build
+```
 
-# Jenkins CI/CD Pipeline Project
+Open the application using the port and URL configured in `docker-compose.yml` and `nginx.conf`.
 
-This project demonstrates a Jenkins CI/CD pipeline for a Dockerized Node.js + MongoDB application.
+### 4. Stop the containers
 
-## Tools Used
-- Jenkins
-- Docker
-- GitHub
-- Node.js
-- MongoDB
+```bash
+docker compose down
+```
 
-## Pipeline Stages
-1. Checkout Source Code
-2. Build Docker Image
-3. Deploy Stage
+## Jenkins CI/CD
 
-## Result
-Pipeline executed successfully and Docker image was built through Jenkins automation.
+The repository includes a `Jenkinsfile` for practicing a pipeline workflow, including source checkout, Docker image building, and a deployment stage.
+
+Pipeline behavior depends on the Jenkins configuration and the commands defined in the `Jenkinsfile`.
+
+## DevOps Concepts Practiced
+
+* Docker images and containers
+* Multi-container application setup
+* Environment variable management
+* Reverse-proxy configuration
+* CI/CD pipeline fundamentals
+* Application and database integration
+
+## Future Improvements
+
+* Add automated tests to the pipeline
+* Add pipeline validation and failure handling
+* Improve container health checks and security
+* Deploy to a cloud environment when appropriate
+
+---
+
+**Author:** Laxmikant Shendurkar
+**Focus:** Cloud Computing and DevOps
